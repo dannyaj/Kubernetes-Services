@@ -1,0 +1,15 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: kube-system
+  name: influxdb-pvc
+spec:
+  selector:
+    matchLabels:
+      type: influxdb-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+
